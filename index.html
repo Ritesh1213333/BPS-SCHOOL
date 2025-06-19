@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baludih Public School - Moonidih, Jharkhand</title>
+    <link rel="icon" type="image/svg+xml" href="BPS LOGO.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="loader-wrapper">
+        <img src="BPS LOGO.svg" alt="Loading Logo" class="loader-logo">
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="main_logo.svg" alt="">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#contact">Contact us</a>
+        </div>
+        <div class="nav-contact">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+919430164968">+91 943 016 4968</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-heading="Welcome to Baludih Public School" data-subheading="Nurturing Minds, Building Futures">
+                    <img src="School.png" alt="School Image 1" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide" data-heading="Excellence in Education" data-subheading="Shaping Leaders of Tomorrow">
+                    <img src="school2.png" alt="School Image 2" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide" data-heading="Modern Facilities" data-subheading="Aiding Holistic Development">
+                    <img src="school3.png" alt="School Image 3" width="100%" height="100%">
+                </div>
+                <div class="swiper-slide" data-heading="Vibrant Campus Life" data-subheading="Where Learning Meets Fun">
+                    <img src="school4.png" alt="School Image 4" width="100%" height="100%">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal-text" id="hero-heading">Welcome to Baludih Public School</h1>
+            <p class="reveal-text" id="hero-subheading">Nurturing Minds, Building Futures</p>
+            <a href="#contact" class="cta-button">Join Us Today</a>
+        </div>
+
+        <div class="notification-bar">
+            <div class="notification-content">
+                <span>Admissions for 2024-2025 are now open! Apply Today!</span> ★
+                <span>Upcoming Event: Annual Sports Meet on October 26th!</span> ★
+                <span>Parent-Teacher Meeting scheduled for November 15th.</span> ★
+                <span>New extracurricular clubs starting soon! Check out the details!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our School</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Baludih Public School is committed to providing quality education and fostering holistic development of students. Located in Moonidih, Jharkhand, our school creates an environment where students can excel academically and personally.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>20+</h3>
+                            <p>Years of Excellence</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Happy Students</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Expert Teachers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="academics">
+        <div class="container">
+            <h2 class="section-title">Academic Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Primary Education</h3>
+                    <p>Foundation years focusing on basic skills and character building</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Secondary Education</h3>
+                    <p>Comprehensive curriculum preparing for higher education</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science Stream</h3>
+                    <p>Advanced studies in Physics, Chemistry, and Biology</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Commerce Stream</h3>
+                    <p>Business studies and financial education</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Smart Classrooms</h3>
+                    <p>Modern technology-enabled learning spaces</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science Labs</h3>
+                    <p>Well-equipped laboratories for practical learning</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Library</h3>
+                    <p>Extensive collection of books and digital resources</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Sports Complex</h3>
+                    <p>State-of-the-art sports facilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">School Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Add your gallery images here -->
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery1.png" alt="School Building" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Moonidih, Jharkhand, India</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 XXXXXXXXXX</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@baludihpublicschool.edu.in</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+            <div class="footer-content">
+                <div class="footer-section about-school">
+                    <div class="logo">
+                        <img src="Footer_logo.svg" alt="">
+                    </div>
+                    <p class="about-footer-text">Baludih Public School is committed to providing quality education and fostering holistic development of students.</p>
+                    <h3 class="contact-footer-title">Contact Us</h3>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 943 016 4968</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@baludihpublicschool.edu.in</p>
+                    </div>
+                </div>
+
+                <div class="footer-section information">
+                    <h3>Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">Admissions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section helpful-links">
+                    <h3>Helpful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section subscribe">
+                    <h3>Subscribe For More Info</h3>
+                    <form class="subscribe-form">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Enter your Email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Baludih Public School. All rights reserved.</p>
+            </div>
+
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

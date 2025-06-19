@@ -1,0 +1,1513 @@
+@font-face {
+    font-family: 'Monteserrat';
+    src: url(/Montserrat/);
+}
+
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+:root {
+    --primary-color: #525dff;
+    /* Orange */
+    --secondary-color: #663cff;
+    /* Lighter Orange */
+    --accent-color: #FFA366;
+    /* Light Orange */
+    --text-color: #2b2b2b;
+    --light-bg: #FFF5EB;
+    /* Very Light Orange */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar Modern Layout */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 6vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    background: rgba(255, 255, 255, 0.619);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.59);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: var(--transition);
+    animation: navSlideIn 0.8s ease forwards;
+}
+
+.navbar .logo { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 18vw;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: #242424;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background: rgba(89, 119, 255, 0.642);
+}
+
+.nav-links a.active {
+    color: #fff;
+    background: #525dff;
+}
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-contact a{
+    text-decoration: none;
+}
+
+.nav-contact i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 0.3rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-contact span {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-contact {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero .swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(3 57 255 / 36%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    padding: 0 20px;
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards 0.2s;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards 0.4s;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #111;
+}
+
+/* About Section */
+.about {
+    background: #8c94ff2d;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center ;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Academics Section */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Facilities Section */
+.facilities {
+    background: #8c94ff2d;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.facility-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+}
+
+.facility-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    background: #8c94ff2d;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Modern Footer Styles */
+.footer {
+    background: #030033;
+    color: var(--white);
+    padding: 5rem 10rem;
+    position: relative;
+    overflow: hidden;
+    height: 67vh;
+}
+
+.footer .footer-content .logo img{
+    width: 7vw;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /* background: linear-gradient(90deg, var(--secondary-color), var(--accent-color)); */
+    animation: gradientMove 3s linear infinite;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+    /* background-color: #525dff; */
+}
+
+.footer-section {
+    animation: fadeInUp 0.8s ease-out;
+    padding-right: 0;
+    /* Ensuring this is present for proper spacing */
+    text-align: left;
+    /* Explicitly left-align for desktop */
+}
+
+.footer-section.about-school {
+    padding-right: 2rem;
+}
+
+.footer-section.about-school .logo h3 {
+    color: var(--white);
+    margin-bottom: 0.2rem;
+    /* Adjusted for closer proximity to tagline */
+}
+
+.footer-section.about-school .tagline {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0rem;
+    /* Remove top margin */
+    margin-bottom: 1rem;
+    /* Adjusted space after tagline */
+}
+
+.footer-section.about-school .about-footer-text {
+    margin-bottom: 1rem;
+    /* Reduced space */
+    font-size: 0.9rem;
+}
+
+.footer-section.about-school .contact-footer-title {
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    /* Reduced space */
+    font-size: 1.1rem;
+}
+
+.footer-section.about-school .info-item {
+    margin-bottom: 0.5rem;
+    /* Reduced space between contact info items */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer-section.about-school .info-item p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+    font-size: 0.85rem;
+}
+
+.footer-section.about-school .info-item i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.footer-section h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    /* Adjusted for tighter spacing */
+    position: relative;
+    padding-bottom: 0.4rem;
+    text-align: left;
+    /* Explicitly left-align for desktop */
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.footer-section:hover h3::after {
+    width: 80px;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    text-align: left;
+    /* Explicitly left-align for desktop */
+}
+
+.footer-links li {
+    margin-bottom: 0.3rem;
+    text-align: left;
+    /* Explicitly left-align for desktop */
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: block;
+    position: relative;
+    transform: translateX(0); /* Initial state */
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.03); /* Scale text slightly on hover */
+}
+
+.footer-section.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.subscribe-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Reduced gap */
+    margin-bottom: 0.8rem;
+    /* Reduced space */
+    align-items: center;
+}
+
+.subscribe-form .input-group {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 220px;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 0.7rem 0.8rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-form .input-group i {
+    color: #555;
+    margin-right: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.subscribe-form .input-group input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 0.9rem;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+
+.subscribe-form .submit-btn {
+    width: 90%;
+    max-width: 220px;
+    align-self: center;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.subscribe-form .submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    /* Reduced gap between social icons */
+    margin-top: 0.6rem;
+    /* Adjusted margin-top */
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-links a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+    /* Reduced margin-top */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .footer-section {
+        padding-right: 0;
+    }
+
+    .footer-section.about-school {
+        padding-right: 0;
+    }
+
+    .footer-section.about-school .info-item {
+        justify-content: center;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section.subscribe {
+        align-items: center;
+        text-align: center;
+    }
+
+    .subscribe-form {
+        width: 100%;
+        align-items: center;
+    }
+
+    .subscribe-form .input-group {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .subscribe-form .submit-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding: 1rem 0;
+    }
+
+    .footer-bottom p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.4rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+        display: inline-block;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-contact {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-right: -50px;
+    }
+    .footer {
+        height: auto;
+        padding: 2.5rem 1rem;
+        text-align: center;
+    }
+
+    .footer .footer-content .logo img{
+        width: 25vw;
+    }
+    
+    .footer .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.3rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+        display: inline-block;
+        transform: none;
+    }
+
+    .subscribe-form .input-group {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .subscribe-form .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .subscribe-form .submit-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+
+    .footer-section.about-school .about-footer-text {
+        text-align: center;
+    }
+    .footer-links {
+        list-style: none;
+        text-align: center;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.4rem;
+        text-align: center;
+    }
+    
+}
+
+/* Animations */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notification Bar */
+.notification-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #460be9;
+    /* Orange background with slight transparency */
+    color: var(--white);
+    padding: 0.8rem 0;
+    overflow: hidden;
+    /* Hide content outside the bar */
+    z-index: 5;
+    /* Ensure it's above other elements */
+}
+
+.notification-content {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    /* Keep content on a single line */
+    animation: slideNotification 30s linear infinite;
+    /* Adjust duration for speed */
+}
+
+.notification-content span {
+    padding: 0 2rem;
+    /* Space between each notification */
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@keyframes slideNotification {
+    0% {
+        transform: translateX(100%);
+        /* Start off-screen to the right */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* End off-screen to the left, creating loop */
+    }
+}
+
+/* Responsive adjustments for notification bar */
+@media (max-width: 768px) {
+    .notification-bar {
+        padding: 0.6rem 0;
+    }
+
+    .notification-content span {
+        font-size: 0.9rem;
+    }
+
+    @keyframes slideNotification {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-200%);
+            /* Adjust for smaller screens if needed */
+        }
+    }
+}
+
+/* Swiper Pagination Customization */
+.swiper-pagination-bullets {
+    bottom: 80px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: #fff !important;
+    opacity: 0.5 !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    transform: scale(1.2);
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        height: 8vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .navbar .logo img {
+        width: 25vw;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+    /* About Section */
+    .about-content {
+        padding: 0 2rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Programs Section */
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    /* Facilities Section */
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        padding: 0 2rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 4rem 3rem;
+        height: auto;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-links li {
+        text-align: center;
+    }
+
+    .footer-section.about-school {
+        padding-right: 0;
+    }
+
+    .footer-section.about-school .info-item {
+        justify-content: center;
+    }
+
+    .subscribe-form {
+        align-items: center;
+    }
+
+    .subscribe-form .input-group {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .subscribe-form .submit-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Notification Bar */
+    .notification-bar {
+        padding: 0.7rem 0;
+    }
+
+    .notification-content span {
+        font-size: 0.95rem;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Responsive Styles for All Sections */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        height: 20vw;
+
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* About Section */
+    .about-content {
+        padding: 0 1rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    /* Academics Section */
+    .programs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .program-card {
+        padding: 1.5rem;
+    }
+
+    .program-card i {
+        font-size: 2rem;
+    }
+
+    /* Facilities Section */
+    .facilities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .facility-card {
+        padding: 1.5rem;
+    }
+
+    .facility-card i {
+        font-size: 2rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    .contact-form {
+        gap: 0.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+    }
+
+    .submit-btn {
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Notification Bar */
+    .notification-bar {
+        padding: 0.6rem 0;
+    }
+
+    .notification-content span {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .hero {
+        overflow: hidden;
+    }
+
+    .hero .swiper-container {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .navbar .logo img {
+        width: 45vw;    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* About Section */
+    .about-content {
+        padding: 0 0.8rem;
+    }
+
+    .stat-item {
+        padding: 1.2rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Academics Section */
+    .programs-grid {
+        gap: 1.2rem;
+        padding: 0 0.8rem;
+    }
+
+    .program-card {
+        padding: 1.2rem;
+    }
+
+    .program-card i {
+        font-size: 1.8rem;
+    }
+
+    /* Facilities Section */
+    .facilities-grid {
+        gap: 1.2rem;
+        padding: 0 0.8rem;
+    }
+
+    .facility-card {
+        padding: 1.2rem;
+    }
+
+    .facility-card i {
+        font-size: 1.8rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+        gap: 0.8rem;
+        padding: 0 0.8rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        gap: 1.5rem;
+        padding: 0 0.8rem;
+    }
+
+    .contact-info {
+        gap: 1.2rem;
+    }
+
+    .contact-form {
+        gap: 0.6rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Notification Bar */
+    .notification-bar {
+        padding: 0.5rem 0;
+    }
+
+    .notification-content span {
+        font-size: 0.8rem;
+        padding: 0 0.8rem;
+    }
+}
+
+/* Additional Responsive Fixes */
+@media (max-width: 320px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .program-card i,
+    .facility-card i {
+        font-size: 1.6rem;
+    }
+}
+
+/* Fix for Swiper Navigation on Mobile */
+@media (max-width: 768px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-pagination-bullets {
+        bottom: 40px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .hero {
+        overflow: hidden;
+    }
+
+    .hero .swiper-container {
+        overflow: hidden;
+    }
+}
+
+@keyframes navSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Swiper Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff !important;
+    background: rgba(0, 0, 0, 0.3);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Loader Styles */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color); /* Or any color you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader-wrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+}
+
